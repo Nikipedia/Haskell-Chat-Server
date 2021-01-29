@@ -1,0 +1,94 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 2214b032a2d34520780fb991ca91841664218668d05e23418ccf120679910ef4
+
+name:           workshop
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/workshop#readme>
+homepage:       https://github.com/githubuser/workshop#readme
+bug-reports:    https://github.com/githubuser/workshop/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2021 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/workshop
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_workshop
+  hs-source-dirs:
+      src
+  build-depends:
+      QuickCheck
+    , aeson
+    , base >=4.7 && <5
+    , bytestring
+    , network-simple
+    , text
+  default-language: Haskell2010
+
+executable client
+  main-is: Main.hs
+  other-modules:
+      Paths_workshop
+  hs-source-dirs:
+      app/Client
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , aeson
+    , base >=4.7 && <5
+    , bytestring
+    , network-simple
+    , text
+    , workshop
+  default-language: Haskell2010
+
+executable server
+  main-is: Main.hs
+  other-modules:
+      Paths_workshop
+  hs-source-dirs:
+      app/Server
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , aeson
+    , base >=4.7 && <5
+    , bytestring
+    , network-simple
+    , text
+    , workshop
+  default-language: Haskell2010
+
+test-suite workshop-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_workshop
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , aeson
+    , base >=4.7 && <5
+    , bytestring
+    , network-simple
+    , text
+    , workshop
+  default-language: Haskell2010
